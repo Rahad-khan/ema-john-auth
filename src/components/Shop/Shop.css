@@ -1,0 +1,20 @@
+.Shop-container{
+    display: grid;
+    grid-template-columns: 7fr 1.5fr;
+    font-family: lato;
+  font-weight: 400;
+}
+.product-container {
+    width: 80%;
+    margin: 120px  auto;
+}
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 45px;
+}
+.summary-container {
+    background: rgba(255, 153, 0, 0.3);
+    box-sizing: border-box;
+    padding: 16px;
+}

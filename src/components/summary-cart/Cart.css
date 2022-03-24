@@ -1,0 +1,25 @@
+.summary {
+    position: sticky;
+    top: 25px;
+}
+.summary button {
+  width: 100%;
+  margin-bottom: 15px;
+  height: 48px;
+  border: 0px;
+  border-radius: 10px;
+  font-size: 18px;
+  color: #fff;
+}
+.first-button {
+  background: #ff3030;
+}
+.first-button:hover {
+  background: #c50909;
+}
+.second-button {
+  background: #ff9900;
+}
+.second-button:hover {
+  background: rgb(247, 78, 0);
+}

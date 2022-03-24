@@ -1,0 +1,19 @@
+.header-section {
+    background: #1C2B35;
+}
+.nav-container{ 
+    width: 80%;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-items a{
+    text-decoration: none;
+    color: #fff;
+margin-left: 36px;
+}
+.nav-items a:hover {
+    color: #ffa724;
+}
