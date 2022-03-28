@@ -5,7 +5,6 @@ import Cart from "../summary-cart/Cart";
 import {
   addToDB,
   removeCart,
-  removeFromDb,
   storedCartDB,
 } from "../../utilities/manageDb";
 

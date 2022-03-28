@@ -2,7 +2,6 @@ import React from "react";
 import "./Cart.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faTrashCan } from "@fortawesome/free-solid-svg-icons";
-import { removeCart } from "../../utilities/manageDb";
 
 const Cart = ({ cartProduct,  reset }) => {
   console.log(cartProduct);
