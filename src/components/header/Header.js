@@ -1,21 +1,23 @@
-import React from 'react';
-import logo from '../../images/Logo.svg'
-import './Header.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import logo from "../../images/Logo.svg";
+import "./Header.css";
 
 const Header = () => {
-    return (
-        <div className='header-section'>
-            <div className='nav-container'>
-                <img src={logo} alt="" />
-                <div className='nav-items'>
-                    <a href="/order">Order</a>
-                    <a href="/order-review">Order Review</a>
-                    <a href="/manage-inventory">Manage Inventory</a>
-                </div>
-            </div>
+  return (
+    <div className="header-section">
+      <div className="nav-container">
+        <Link to='/'>
+          <img src={logo} alt="" />
+        </Link>
+        <div className="nav-items">
+          <Link to="/order">Order</Link>
+          <Link to="/order-review">Order Review</Link>
+          <Link to="/manage-inventory">Manage Inventory</Link>
         </div>
-        
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Header;
