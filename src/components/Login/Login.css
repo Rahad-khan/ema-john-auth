@@ -1,0 +1,84 @@
+.login-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+}
+.login-form{
+	width: 500px;
+	padding: 20px 0;
+	height: fit-content;
+border: 1px solid #95A0A7;
+border-radius: 8px;
+margin: 50px 0;
+}
+.form-title{
+	text-align: center;
+	font-weight: 400;
+font-size: 35px;
+line-height: 42px;
+color: #2A414F;
+}
+.form-information{
+	width: 80%;
+	margin: 0 auto;
+}
+.form-information p{
+	margin: 2px 0;
+	text-align: center;
+}
+.form-link {
+	color: rgba(255, 153, 0, 1);
+	text-decoration: none;
+}
+.input-group {
+	margin: 20px auto;
+	display: flex;
+	flex-direction: column;
+	
+}
+.input-group label{
+	display: block;
+	color: #2A414F;
+	margin-bottom: 10px;
+}
+.input-group input {
+	border-radius: 5px;
+	border: 1px solid #95A0A7;
+	padding: 10px;
+	font-size: 18px;
+	
+}
+.input-group input:focus {
+	outline: 2px solid rgba(0, 0, 255, 0.427);
+}
+.form-btn, .google-btn{
+	margin-top: 24px;
+	 border: none;
+	 width: 100%;
+	 padding: 10px;
+	 cursor: pointer;
+	 font-size: 21px;
+	 border-radius: 5px;
+}
+.form-btn {
+	background: rgba(255, 153, 0, 0.3);
+}
+.google-btn {
+	background: #fff;
+	border: 1px solid #95A0A7;
+}
+.legend {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 30px;
+}
+.legend p{
+	padding: 0 30px;
+}
+.legend div {
+	width: 50%;
+	border-top: 2px solid 
+	rgba(149, 160, 167, 1);
+}
