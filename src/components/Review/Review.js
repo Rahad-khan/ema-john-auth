@@ -4,6 +4,9 @@ import useProduct from '../../hooks/useProduct';
 import Cart from '../summary-cart/Cart';
 import ReviewCart from '../ReviewCart/ReviewCart'
 import { removeCart, removeFromDb } from '../../utilities/manageDb';
+import './Review.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCreditCard } from '@fortawesome/free-solid-svg-icons';
 
 const Review = () => {
     const [products, setProducts] = useProduct();
@@ -34,7 +37,10 @@ const Review = () => {
         <Cart 
         reset={resetCart}
         cartProduct={cartProduct}
-        ></Cart>
+        >
+          <button className="second-button">Proceed Checkout <FontAwesomeIcon icon={faCreditCard} />
+      </button>
+        </Cart>
       </div>
     </div>
     );

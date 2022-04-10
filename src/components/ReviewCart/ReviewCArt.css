@@ -33,7 +33,7 @@
   color: #ff9900;
 }
 .review-product-details button {
-  margin-right: 23px;
+  margin:0px 23px;
 }
 .delete-btn {
     color: rgba(235, 87, 87, 1);

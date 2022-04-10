@@ -1,0 +1,14 @@
+.review-container {
+  width: 80%;
+  margin: 40px auto;
+  display: flex;
+  justify-content: space-between;
+}
+.review-summary-container {
+  position: sticky;
+  top: 25px;
+  min-width: 250px;
+  max-height: 350px;
+  background: rgba(255, 153, 0, 0.3);
+  padding: 0px 50px 50px;
+}
