@@ -7,6 +7,7 @@ import { removeCart, removeFromDb } from '../../utilities/manageDb';
 import './Review.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCreditCard } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const Review = () => {
     const [products, setProducts] = useProduct();
@@ -38,8 +39,10 @@ const Review = () => {
         reset={resetCart}
         cartProduct={cartProduct}
         >
+          <Link to="/manage-inventory">
           <button className="second-button">Proceed Checkout <FontAwesomeIcon icon={faCreditCard} />
       </button>
+          </Link>
         </Cart>
       </div>
     </div>

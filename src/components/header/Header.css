@@ -17,3 +17,10 @@ margin-left: 36px;
 .nav-items a:hover {
     color: #ffa724;
 }
+.nav-signout {
+    color: #fff;
+margin-left: 36px;
+border: none;
+background-color: transparent;
+font-size: 16px;
+}

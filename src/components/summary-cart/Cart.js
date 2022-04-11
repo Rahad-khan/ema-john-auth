@@ -5,7 +5,6 @@ import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 const Cart = ({ cartProduct,  reset,children }) => {
-  console.log(children);
   let price = 0;
   let shipping = 0;
   let quantity = 0;
