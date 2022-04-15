@@ -9,6 +9,7 @@ import useProduct from "../../hooks/useProduct";
 import useCart from "../../hooks/useCart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 const Shop = () => {
   const [products, setProducts] = useProduct();
@@ -37,6 +38,7 @@ const Shop = () => {
     setCartProduct([]);
     removeCart();
   };
+  const navigate = useNavigate();
   return (
     <div className="Shop-container">
       <div className="product-container">
@@ -52,7 +54,9 @@ const Shop = () => {
       </div>
       <div className="summary-container">
         <Cart cartProduct={cartProduct} reset = {resetCart}>
-        <button className="second-button">
+        <button
+        onClick={() => navigate('/order-review')}
+        className="second-button">
         Review Order <FontAwesomeIcon icon={faArrowRight} />
       </button>
         </Cart>

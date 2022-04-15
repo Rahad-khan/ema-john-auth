@@ -27,9 +27,8 @@ const Cart = ({ cartProduct,  reset,children }) => {
         Clear Cart <FontAwesomeIcon icon={faTrashCan} />
       </button>
       <br />
-      <Link to='/order-review'>
+      
       {children}
-      </Link>
     </div>
   );
 };
