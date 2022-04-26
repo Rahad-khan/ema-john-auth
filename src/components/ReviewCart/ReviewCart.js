@@ -23,7 +23,7 @@ const ReviewCart = ({ product, removeProductFromCart }) => {
             <small>Quantity : {quantity}</small>
           </p>
         </div>
-        <button onClick={() => removeProductFromCart(product.id)} className="delete-btn">
+        <button onClick={() => removeProductFromCart(product._id)} className="delete-btn">
           <FontAwesomeIcon icon={faTrashAlt}></FontAwesomeIcon>
         </button>
       </div>

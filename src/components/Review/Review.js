@@ -17,7 +17,7 @@ const Review = () => {
 
   const removeProductFromCart = (id) => {
     console.log(id);
-    const rests = cartProduct.filter((product) => product.id !== id);
+    const rests = cartProduct.filter((product) => product._id !== id);
     setCartProduct(rests);
     removeFromDb(id);
   };
@@ -30,7 +30,7 @@ const Review = () => {
       <div className="review-product">
         {cartProduct.map((pro) => (
           <ReviewCart
-            key={pro.id}
+            key={pro._id}
             product={pro}
             removeProductFromCart={removeProductFromCart}
           ></ReviewCart>
