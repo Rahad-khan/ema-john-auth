@@ -5,7 +5,6 @@ import {
   addToDB,
   removeCart,
 } from "../../utilities/manageDb";
-import useProduct from "../../hooks/useProduct";
 import useCart from "../../hooks/useCart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -13,20 +12,30 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const Shop = () => {
-  const [products, setProducts] = useProduct();
+  const [activePage, setActivePage] = useState(0);
+  const [count, setCount] = useState(10);
+
+  //page count 
   const [pages, setPages] = useState(0);
   useEffect(()=>{
     fetch("http://localhost:5000/productsCount")
     .then(res => res.json())
     .then(data => {
       const productsCount = data;
-      const totalPage = Math.ceil(productsCount / 10); ;
+      const totalPage = Math.ceil(productsCount / count); ;
       setPages(totalPage);
     })
-  }, [])
-  //page count 
+  }, [count])
+  //load data from db
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/products?page=${activePage}&count=${count}`)
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, [activePage, count]);
   //linked to Order Summary
-  const [cartProduct, setCartProduct] = useCart(products);
+  const [cartProduct, setCartProduct] = useCart();
   // added Product function
   const addedProduct = (selectedProduct) => {
     const exist = cartProduct.find(
@@ -64,18 +73,37 @@ const Shop = () => {
           ))}
         </div>
         <div className="pagination-container">
-        {
-          [...Array(pages).keys()].map((number, index) => <button key={index}>{number}</button>)
-        }
+          {[...Array(pages).keys()].map((number, index) => (
+            <button
+              className={activePage === number ? "selected" : ""}
+              onClick={() => setActivePage(number)}
+              key={index}
+            >
+              {number + 1}
+            </button>
+          ))}
+          <select
+            defaultValue={"10"}
+            onChange={(e) => setCount(e.target.value)}
+            className="page-size"
+          >
+            <option value="5">5</option>
+            <option value="10">
+              10
+            </option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+          </select>
         </div>
       </div>
       <div className="summary-container">
-        <Cart cartProduct={cartProduct} reset = {resetCart}>
-        <button
-        onClick={() => navigate('/order-review')}
-        className="second-button">
-        Review Order <FontAwesomeIcon icon={faArrowRight} />
-      </button>
+        <Cart cartProduct={cartProduct} reset={resetCart}>
+          <button
+            onClick={() => navigate("/order-review")}
+            className="second-button"
+          >
+            Review Order <FontAwesomeIcon icon={faArrowRight} />
+          </button>
         </Cart>
       </div>
     </div>

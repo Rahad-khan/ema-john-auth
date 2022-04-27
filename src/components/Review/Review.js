@@ -1,6 +1,5 @@
 import React from "react";
 import useCart from "../../hooks/useCart";
-import useProduct from "../../hooks/useProduct";
 import Cart from "../summary-cart/Cart";
 import ReviewCart from "../ReviewCart/ReviewCart";
 import { removeCart, removeFromDb } from "../../utilities/manageDb";
@@ -11,8 +10,7 @@ import { useNavigate } from "react-router-dom";
 
 
 const Review = () => {
-  const [products, setProducts] = useProduct();
-  const [cartProduct, setCartProduct] = useCart(products);
+  const [cartProduct, setCartProduct] = useCart();
   const navigate = useNavigate();
 
   const removeProductFromCart = (id) => {
