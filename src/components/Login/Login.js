@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Login.css";
 import {
@@ -21,9 +21,12 @@ const Login = () => {
     signInWithEmailAndPassword(email, password);
   };
   const [signInWithGoogle, user1, loading1, error1] = useSignInWithGoogle(auth);
-  if (user || user1) {
-    navigate(from, { replace: true });
-  }
+  useEffect(() => {
+    if (user || user1) {
+      navigate(from, { replace: true });
+    }
+  }, [from, navigate, user, user1])
+  
   return (
     <div className="login-container">
       <div className="login-form">
